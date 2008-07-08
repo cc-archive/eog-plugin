@@ -29,4 +29,17 @@ class HelloWorldPlugin(eog.Plugin):
                 print 'The answer fell off my rooftop, woot'
 
         def console_cb(self, action, window):
-            print "Calling me to work it out."
+            image = window.get_image()
+            if image is None:
+                return # nothing to do
+            filename = image.get_uri_for_display()
+            try:
+                import liblicense
+            except ImportError:
+                print 'You do not have liblicense.'
+                return # get outta here
+            license = liblicense.read(filename)
+            if license is None:
+                print 'The thing has no license.'
+            else:
+                print 'The thing has license', license
