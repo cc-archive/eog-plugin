@@ -43,3 +43,13 @@ class HelloWorldPlugin(eog.Plugin):
                 print 'The thing has no license.'
             else:
                 print 'The thing has license', license
+	    # Get statusbar object
+	    statusbar = window.get_statusbar()
+	    lol = gtk.Label('lol')
+	    lol.show()
+	    box = gtk.VBox()
+	    box.pack_end(lol)
+	    statusbar.pack_end(box)
+	    box.show()
+
+		
