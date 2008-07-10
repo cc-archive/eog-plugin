@@ -23,6 +23,15 @@ class HelloWorldPlugin(eog.Plugin):
         </ui>'''
 
         def show_license_info_dialog(self, event):
+            # Seed with information from us.
+            
+            #license_value, web_statement_value, more_permissions_value, creator_value
+            # FIXME: Python bindings only expose LL_LICENSE metadata
+            data = {'license_value': self.license}
+            for widget_id in data:
+                widget = self.wTree.get_widget(widget_id)
+                widget.set_text(data[widget_id])
+            # FIXME: Make back and next do something?
             self.dialog.show()
 
         def license2iconsbutton(self, license_uri):
@@ -66,11 +75,11 @@ class HelloWorldPlugin(eog.Plugin):
             except ImportError:
                 print 'You do not have liblicense.'
                 return # get outta here
-            license = liblicense.read(filename)
-            if license is None:
+            self.license = liblicense.read(filename)
+            if self.license is None:
                 print 'The thing has no license.'
             else:
-                print 'The thing has license', license
+                print 'The thing has license', self.license
             # Get statusbar object
             statusbar = window.get_statusbar()
             but = self.license2iconsbutton('wtf')
