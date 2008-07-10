@@ -3,6 +3,10 @@ import pprint
 import gtk
 import gtk.glade
 
+def hide_true(widget):
+    widget.hide()
+    return True
+
 class LicenseInfoDialog(gtk.Window):
     pass
 
@@ -35,6 +39,8 @@ class HelloWorldPlugin(eog.Plugin):
                 self.gladefile = "licensing-properties-dialog.glade"
                 self.wTree = gtk.glade.XML(self.gladefile)
                 self.dialog = self.wTree.get_widget("eog_image_properties_dialog")
+                self.dialog.connect("destroy", lambda event, dummy: hide_true(self.dialog))
+                self.dialog.connect("delete_event", lambda event, dummy: hide_true(self.dialog))
 
         def activate(self, window):
                 ui_manager = window.get_ui_manager()
