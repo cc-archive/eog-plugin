@@ -16,10 +16,17 @@ class HelloWorldPlugin(eog.Plugin):
                 </menu>
             </menubar>
         </ui>'''
+
+        def show_license_info_dialog(self, event):
+            print 'You just missed an opportunity to show a license info dialog.'
+
         def license2iconsbutton(self, license_uri):
             but = gtk.Button("")
-            but.set_image(gtk.Image.set_from_file("/home/paulproteus/gitted/liblicense/scales.svg"))
-            but.connect("clicked", lambda thing1, thing2: pprint.pprint('lol'))
+            image = gtk.Image()
+            image.set_from_file("/home/paulproteus/gitted/liblicense/scales.svg")
+            but.set_image(image)
+            image.show()
+            but.connect("clicked", self.show_license_info_dialog)
             return but
             
         def __init__(self):

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.5 on Wed Jul  9 19:25:19 2008 -->
+<!--Generated with glade3 3.4.5 on Wed Jul  9 19:38:14 2008 -->
 <glade-interface>
   <requires lib="gnome"/>
   <widget class="GtkDialog" id="eog_image_properties_dialog">
+    <property name="visible">True</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Image Properties</property>
     <property name="icon_name">gtk-properties</property>
