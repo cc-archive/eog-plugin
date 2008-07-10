@@ -28,7 +28,8 @@ class HelloWorldPlugin(eog.Plugin):
         def license2iconsbutton(self, license_uri):
             but = gtk.Button("")
             image = gtk.Image()
-            image.set_from_file("/home/paulproteus/gitted/liblicense/scales.svg")
+            image.set_from_file("/home/paulproteus/gitted/liblicense/icons/scales.svg")
+            # FIXME: Look up license, get picture!
             but.set_image(image)
             image.show()
             but.connect("clicked", self.show_license_info_dialog)
