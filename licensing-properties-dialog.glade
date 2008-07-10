@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.5 on Wed Jul  9 19:38:14 2008 -->
+<!--Generated with glade3 3.4.5 on Wed Jul  9 20:31:30 2008 -->
 <glade-interface>
-  <requires lib="gnome"/>
   <widget class="GtkDialog" id="eog_image_properties_dialog">
     <property name="visible">False</property>
     <property name="border_width">5</property>
@@ -24,27 +23,98 @@
               <widget class="GtkHBox" id="hbox1">
                 <property name="visible">True</property>
                 <child>
-                  <widget class="GnomeHRef" id="href2">
+                  <widget class="GtkVBox" id="vbox1">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">button</property>
-                    <property name="relief">GTK_RELIEF_NONE</property>
-                    <property name="response_id">0</property>
-                    <property name="url"></property>
-                    <property name="text"></property>
+                    <child>
+                      <widget class="GtkImage" id="image3">
+                        <property name="visible">True</property>
+                        <property name="stock">gtk-missing-image</property>
+                      </widget>
+                    </child>
                   </widget>
                 </child>
                 <child>
-                  <widget class="GnomeHRef" id="href1">
+                  <widget class="GtkHBox" id="hbox2">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">button</property>
-                    <property name="relief">GTK_RELIEF_NONE</property>
-                    <property name="response_id">0</property>
-                    <property name="url"></property>
-                    <property name="text"></property>
+                    <child>
+                      <widget class="GtkVBox" id="vbox3">
+                        <property name="visible">True</property>
+                        <child>
+                          <widget class="GtkLabel" id="label1">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">&lt;b&gt;License&lt;/b&gt;:</property>
+                            <property name="use_markup">True</property>
+                          </widget>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="label2">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">&lt;b&gt;Creator:&lt;/b&gt;</property>
+                            <property name="use_markup">True</property>
+                          </widget>
+                          <packing>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="label3">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">&lt;b&gt;More permissions:&lt;/b&gt;</property>
+                            <property name="use_markup">True</property>
+                          </widget>
+                          <packing>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="label5">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">&lt;b&gt;Web statement:&lt;/b&gt;</property>
+                            <property name="use_markup">True</property>
+                          </widget>
+                          <packing>
+                            <property name="position">3</property>
+                          </packing>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkVBox" id="vbox4">
+                        <property name="visible">True</property>
+                        <child>
+                          <widget class="GtkLabel" id="license_value">
+                            <property name="visible">True</property>
+                          </widget>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="creator_value">
+                            <property name="visible">True</property>
+                          </widget>
+                          <packing>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="more_permissions_value">
+                            <property name="visible">True</property>
+                          </widget>
+                          <packing>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="web_statement_value">
+                            <property name="visible">True</property>
+                          </widget>
+                          <packing>
+                            <property name="position">3</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
                   </widget>
                   <packing>
                     <property name="position">1</property>
