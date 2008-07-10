@@ -1,6 +1,7 @@
 import eog
 import pprint
 import gtk
+import gtk.glade
 
 class LicenseInfoDialog(gtk.Window):
     pass
@@ -18,7 +19,7 @@ class HelloWorldPlugin(eog.Plugin):
         </ui>'''
 
         def show_license_info_dialog(self, event):
-            print 'You just missed an opportunity to show a license info dialog.'
+            self.dialog.show()
 
         def license2iconsbutton(self, license_uri):
             but = gtk.Button("")
@@ -31,6 +32,9 @@ class HelloWorldPlugin(eog.Plugin):
             
         def __init__(self):
                 eog.Plugin.__init__(self)
+                self.gladefile = "licensing-properties-dialog.glade"
+                self.wTree = gtk.glade.XML(self.gladefile)
+                self.dialog = self.wTree.get_widget("eog_image_properties_dialog")
 
         def activate(self, window):
                 ui_manager = window.get_ui_manager()

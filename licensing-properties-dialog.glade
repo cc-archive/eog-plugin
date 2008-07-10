@@ -4,7 +4,7 @@
 <glade-interface>
   <requires lib="gnome"/>
   <widget class="GtkDialog" id="eog_image_properties_dialog">
-    <property name="visible">True</property>
+    <property name="visible">False</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Image Properties</property>
     <property name="icon_name">gtk-properties</property>
