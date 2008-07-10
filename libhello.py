@@ -1,4 +1,5 @@
 import eog
+import pprint
 import gtk
 
 class LicenseInfoDialog(gtk.Window):
@@ -15,6 +16,12 @@ class HelloWorldPlugin(eog.Plugin):
                 </menu>
             </menubar>
         </ui>'''
+        def license2iconsbutton(self, license_uri):
+            but = gtk.Button("")
+            but.set_image(gtk.Image.set_from_file("/home/paulproteus/gitted/liblicense/scales.svg"))
+            but.connect("clicked", lambda thing1, thing2: pprint.pprint('lol'))
+            return but
+            
         def __init__(self):
                 eog.Plugin.__init__(self)
 
@@ -46,13 +53,13 @@ class HelloWorldPlugin(eog.Plugin):
                 print 'The thing has no license.'
             else:
                 print 'The thing has license', license
-        # Get statusbar object
-        statusbar = window.get_statusbar()
-        lol = gtk.Label('lol')
-        lol.show()
-        box = gtk.VBox()
-        box.pack_end(lol)
-        statusbar.pack_end(box)
-        box.show()
+            # Get statusbar object
+            statusbar = window.get_statusbar()
+            but = self.license2iconsbutton('wtf')
+            but.show()
+            box = gtk.VBox()
+            box.pack_end(but)
+            statusbar.pack_end(box)
+            box.show()
 
         
