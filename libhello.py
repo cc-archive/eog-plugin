@@ -1,6 +1,9 @@
 import eog
 import gtk
 
+class LicenseInfoDialog(gtk.Window):
+    pass
+
 class HelloWorldPlugin(eog.Plugin):
         _ui_str = '''
         <ui>
@@ -43,13 +46,13 @@ class HelloWorldPlugin(eog.Plugin):
                 print 'The thing has no license.'
             else:
                 print 'The thing has license', license
-	    # Get statusbar object
-	    statusbar = window.get_statusbar()
-	    lol = gtk.Label('lol')
-	    lol.show()
-	    box = gtk.VBox()
-	    box.pack_end(lol)
-	    statusbar.pack_end(box)
-	    box.show()
+        # Get statusbar object
+        statusbar = window.get_statusbar()
+        lol = gtk.Label('lol')
+        lol.show()
+        box = gtk.VBox()
+        box.pack_end(lol)
+        statusbar.pack_end(box)
+        box.show()
 
-		
+        
