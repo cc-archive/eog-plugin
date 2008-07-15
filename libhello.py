@@ -27,10 +27,11 @@ class HelloWorldPlugin(eog.Plugin):
             
             #license_value, web_statement_value, more_permissions_value, creator_value
             # FIXME: Python bindings only expose LL_LICENSE metadata
-            data = {'license_value': self.license}
-            for widget_id in data:
+            for widget_id in self.metadata:
                 widget = self.wTree.get_widget(widget_id)
-                widget.set_text(data[widget_id])
+		value = self.metadata[widget_id]
+		if value is not None:
+		    widget.set_text(value)
             # FIXME: Make back and next do something?
             self.dialog.show()
 
@@ -75,11 +76,14 @@ class HelloWorldPlugin(eog.Plugin):
             except ImportError:
                 print 'You do not have liblicense.'
                 return # get outta here
-            self.license = liblicense.read(filename)
-            if self.license is None:
-                print 'The thing has no license.'
-            else:
-                print 'The thing has license', self.license
+            self.metadata = {'license_value': liblicense.read(filename),
+			     'more_permissions_value':
+				 liblicense.read(filename, liblicense.LL_MORE_PERMISSIONS),
+			     'creator_value':
+				 liblicense.read(filename, liblicense.LL_CREATOR),
+			     'web_statement_value':
+				 liblicense.read(filename, liblicense.LL_WEBSTATEMENT)}
+
             # Get statusbar object
             statusbar = window.get_statusbar()
             but = self.license2iconsbutton('wtf')
