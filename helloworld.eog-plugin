@@ -1,5 +1,5 @@
 [Eog Plugin]
-Module=libhello
+Module=eoglicensing
 IAge=2
 Name=Hellloooooooooo
 Loader=python
