@@ -1,10 +1,10 @@
 [Eog Plugin]
 Module=eoglicensing
 IAge=2
-Name=Hellloooooooooo
+Name=CC Metadata
 Loader=python
 Icon=postr
-Description=Print a greeting to the console where eog is running
+Description=CC metadata demonstration
 Authors=Asheesh Laroia <eog-oh-baby@asheesh.org>
-Copyright=Copyright © 2007 Creative Commons
-Website=about:mozilla
+Copyright=Copyright © 2007-2008 Creative Commons
+Website=http://wiki.creativecommons.org/Embedded_Metadata
