@@ -1,4 +1,5 @@
 import eog
+import os
 import pprint
 import gtk
 import gtk.glade
@@ -47,7 +48,8 @@ class HelloWorldPlugin(eog.Plugin):
             
         def __init__(self):
                 eog.Plugin.__init__(self)
-                self.gladefile = "licensing-properties-dialog.glade"
+                self.gladefile = os.path.join(
+                    os.path.dirname(__file__), "licensing-properties-dialog.glade")
                 self.wTree = gtk.glade.XML(self.gladefile)
                 self.dialog = self.wTree.get_widget("eog_image_properties_dialog")
                 self.dialog.connect("destroy", lambda event, dummy: hide_true(self.dialog))
